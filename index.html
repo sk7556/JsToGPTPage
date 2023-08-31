@@ -8,16 +8,19 @@
     <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-    <article class="comic">
-        <div class="panel">
-            <p class="speech">A speech bubble</p>
-        </div>
-    </article>
-
-</article>
-    
-
-
-
+    <form id = "indexForm" action = "main.html">
+        <article class="comic">
+            <div class="panel">
+                <input type = "text" class = "speech" name = "city" placeholder="가고 싶은 도시명은?">
+                <br>
+                <input type = "number" class = "speech" name = "numberOfDays" placeholder="몇 일 여행이 될까요?">
+                <br>
+                <button type = "submit"> 자 이제 떠나볼까? </button>    
+            </div>
+            
+        </article>
+        <!-- 근데 이걸 이렇게 사용하면 Javascript 로 로드스토리지 사용하는게 무의미가 되는구나 -->
+        
+    </form>
 </body>
 </html>

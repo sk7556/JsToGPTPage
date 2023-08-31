@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <input type="text">
+            <button type="submit">질문하기!</button>
+        </form>
+        <div class="answer"></div>
+        <br><br>
+        <div class="answer2"></div>
+    </div>
+    <script>
+        const $input = document.querySelector('input')
+        const $button = document.querySelector('button')
+        const $answer = document.querySelector('.answer')
+        const $answer2 = document.querySelector('.answer2')
+        var $fetchAnswer = ''
+
+        const data = []
+        const data2 = []
+        
+        // const 는 아예 재선언 자체가 안되어 버리니 
+        // 데이터 입력이 첫번째에서 끝나버리는 참사가 
+        const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`        
+        var contents = ''
+        var $tempCity = ''
+        data.push({
+            "role": "system",
+            "content": "입력된 관광지의 추천장소 5군데 { cityPlace : 이름, mapCode : 구글좌표 } 형식으로 출력. 설명은 뺄 것"            
+        })
+
+
+        // 이벤트 리스너 발동 시 json 작성 및 fetch 수행
+        $button.addEventListener('click', e => {
+            e.preventDefault()
+            contents = $input.value;
+            data.push({                
+                "role": "user",
+                "content": contents                
+            })
+            $tempCity = $input.value;
+            $input.value = ''
+
+            chatGPTAPI();      
+            
+            
+        })
+
+        function chatGPTAPI() {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+                redirect: 'follow'
+            })
+            .then(res => res.json())
+            .then(res => {
+                
+                const responseChoice = `${res.choices[0].message.content}`;
+                // 확인용으로 answer에 출력
+                                
+                
+                // 답변 온 것을 localStorage 로 저장
+                // 입력된 도시이름을 반영해서 로컬 스토리지 이름을 정해야함
+                localStorage.setItem('cityPlace'+$tempCity, `${responseChoice}`);
+                $answer.innerHTML = localStorage.getItem('cityPlace'+$tempCity);
+            })
+        }
+    </script>
+</body>
+</html>

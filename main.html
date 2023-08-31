@@ -7,8 +7,8 @@
 </head>
 
 <body>
-    
-
+    <span class = 'city'></span>
+    <span class = 'numberOfDays'></span>
     
     
     
@@ -21,9 +21,19 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
+    <!-- 페이지 구현 스크립트-->
     <script>
-        
+        // URL 에서 파라미터를 받아오는 쿼리
+        const queryString = window.location.search;
+
+        // 객체화해서 파스
+        const queryParams = new URLSearchParams(queryString);
+
+        const city = queryParams.get('city');
+        const numberOfDays = queryParams.get('numberOfDays');
+
+        const citySpan = $('.city').html(city);
+        const daysSpan = $('.numberOfDays').html(numberOfDays);
 
     </script>
 
