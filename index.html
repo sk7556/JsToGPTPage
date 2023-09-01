@@ -8,7 +8,7 @@
     <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-    <form id = "indexForm" action = "main.html">
+    <form id = "indexForm">
         <article class="comic">
             <div class="panel">
                 <input type = "text" class = "speech" name = "city" placeholder="가고 싶은 도시명은?">
@@ -16,8 +16,7 @@
                 <input type = "number" class = "speech" name = "numberOfDays" placeholder="몇 일 여행이 될까요?">
                 <br>
                 <button type = "submit"> 자 이제 떠나볼까? </button>    
-            </div>
-            
+            </div>            
         </article>
         <!-- 근데 이걸 이렇게 사용하면 Javascript 로 로드스토리지 사용하는게 무의미가 되는구나 -->
 
@@ -25,5 +24,56 @@
         <!-- fetch 만들어서 넘길것-->
         
     </form>
+
+    <script>
+        var contents = ''
+        var $tempCity = ''
+        var city = ()
+        data.push({
+            "role": "system",
+            "content": "입력된 관광지의 추천장소 5군데 { cityPlace : 이름, mapCode : 구글좌표 } 형식으로 출력. 설명은 뺄 것"            
+        })
+
+
+        // 이벤트 리스너 발동 시 json 작성 및 fetch 수행
+        $button.addEventListener('click', e => {
+            e.preventDefault()
+            contents = $input.value;
+            data.push({                
+                "role": "user",
+                "content": contents                
+            })
+            $tempCity = $input.value;
+            $input.value = ''
+
+            chatGPTAPI();      
+            
+            
+        })
+
+        function chatGPTAPI() {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+                redirect: 'follow'
+            })
+            .then(res => res.json())
+            .then(res => {
+                
+                const responseChoice = `${res.choices[0].message.content}`;
+                // 확인용으로 answer에 출력
+                                
+                
+                // 답변 온 것을 localStorage 로 저장
+                // 입력된 도시이름을 반영해서 로컬 스토리지 이름을 정해야함
+                localStorage.setItem('cityPlace'+$tempCity, `${responseChoice}`);
+                $answer.innerHTML = localStorage.getItem('cityPlace'+$tempCity);
+            })
+        }
+    </script>
+
 </body>
 </html>
