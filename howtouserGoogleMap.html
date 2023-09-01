@@ -2,64 +2,25 @@
 <html>
 <head>
   <title>Google Maps Example</title>
-  <!-- Include the Google Maps API with your API key -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqwnYCgWy-a9Y12YpC860itvVNCCFh67o"></script>
-  <script>
-    
-
-    // Data for city places and their coordinates
-    var cityPlaces = [
-      {
-        name: "Tokyo Disneyland",
-        coordinates: { lat: 35.6329, lng: 139.8804 }
-      },
-      {
-        name: "Tokyo Skytree Tower",
-        coordinates: { lat: 35.7101, lng: 139.8107 }
-      },
-      {
-        name: "Tokyo DisneySea",
-        coordinates: { lat: 35.6312, lng: 139.8841 }
-      },
-      {
-        name: "Tokyo Tower",
-        coordinates: { lat: 35.6585, lng: 139.7454 }
-      },
-      {
-        name: "Akihabara",
-        coordinates: { lat: 35.6994, lng: 139.7710 }
-      }
-    ];
-
-    // Initialize the map when the API is loaded
-    function initMap() {
-      // Set the initial center of the map (e.g., Tokyo Disneyland)
-      var centerCoordinates = cityPlaces[0].coordinates;
-
-      // Create a map object
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: centerCoordinates,
-        zoom: 12 // Adjust the zoom level
-      });
-
-      // Add markers for each city place
-      cityPlaces.forEach(function(place) {
-        var marker = new google.maps.Marker({
-          position: place.coordinates,
-          map: map,
-          title: place.name
-        });
-      });
-    }
-  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqwnYCgWy-a9Y12YpC860itvVNCCFh67o&callback=initMap" async defer></script>
 </head>
 <body>
-  <!-- Create a map container -->
-  <div id="map" style="height: 400px; width: 100%;"></div>
-  
-  <!-- Load the map when the API is loaded -->
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqwnYCgWy-a9Y12YpC860itvVNCCFh67o">
+  <div id="map" style="width: 100%; height: 500px;"></div>
+  <script>
+    function initMap() {
+      // Create a map centered at a specific location
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 37.7749, lng: -122.4194}, // Example coordinates for San Francisco
+        zoom: 12
+      });
+      
+       // Create a marker and set its position
+       var marker = new google.maps.Marker({
+        position: {lat: 37.7749, lng: -122.4194}, // Example coordinates for marker position
+        map: map, // Set the map to display the marker
+        title: 'Marker Title' // Optional: Add a title to the marker
+      });
+    }
   </script>
 </body>
 </html>

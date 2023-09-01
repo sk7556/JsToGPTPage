@@ -10,7 +10,12 @@
     <span class = 'city'></span>
     <span class = 'numberOfDays'></span>
     
-    
+    <span class = ></span>
+    <span class = ></span>
+    <span class = ></span>
+    <span class = ></span>
+    <span class = ></span>
+    <span class = ></span>
     
     
     <!-- 부트 스트랩 로딩 -->
@@ -34,6 +39,15 @@
 
         const citySpan = $('.city').html(city);
         const daysSpan = $('.numberOfDays').html(numberOfDays);
+
+        // 저장된 데이터 값을 가져오는 부분 fetch는 index에 구현하자        
+        var cityData1 = JSON.parse(localStorage.getItem('cityPlace도쿄'))
+
+        cityData1[0].cityPlace
+
+        cityData1[0].mapCode
+
+
 
     </script>
 
