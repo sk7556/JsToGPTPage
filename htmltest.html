@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        .airplane {
+            width : 200px; 
+            position : fixed;
+            top : 45%;
+            left : 45%;
+            transform : translate(-50%, -50%);
+            transition : 1s;
+        }
+
+        .moveLeft {
+            top : 55%;
+            left : 55%;
+            transition : 1s;
+        }
+
+    </style>
+</head>
+    <body style = "background-color: gray;">
+        <img src = "image/airplane.png" class = 'airplane'>  
+
+        <script>        
+
+            const airplaneImg = document.querySelector('.airplane')
+            
+            const moveLeft = function toggleAnimation(){
+                airplaneImg.classList.toggle('.moveLeft');
+            }
+
+            setInterval(moveLeft, 2000);
+
+        </script>
+
+
+    </body>
+</html>

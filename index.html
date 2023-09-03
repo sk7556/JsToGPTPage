@@ -25,6 +25,13 @@
         
     </form>
 
+    <div class = "loadingScreen">
+        <!-- 로딩 스크린 구성 -->
+        <img src = '/image/airplane.png' class = 'airplane'>
+
+
+    </div>
+
     <script>
         var goTravle = document.querySelector('#goTravle')
         var systemContents = ''
@@ -55,7 +62,9 @@
             $tempCity = $input.value;
             $input.value = ''
 
-            chatGPTAPI();      
+            chatGPTAPI();  
+            
+            
         })
 
         function chatGPTAPI() {
@@ -91,10 +100,26 @@
                     localStorage.setItem(tempPlaceName, cityData[i].cityPlace) // ex 변수명 cityPlace도쿄1, 시부야
                 } // 이걸로 넘어가서 지도를 만들고 메뉴를 만들고 하면됨 
                 })
+
+                // 페치가 끝나면서 로딩화면 출력
+                loadingScreen();
         }
 
         // LocalStorage의 도시가 있다면 이걸로 구글맵 핀 5개 + 각각 사진 3개 ( API )
-        // 위 페치가 이루어질 때까지 로딩화면이 여기에 필요하다. 끝나고 넘어가는 화면 반드시 필요함  
+        
+        
+        // 로딩화면 함수
+        function loadingScreen(){
+            var loadScreen = document.querySelector('.loadingScreen');
+            if ( loadScreen.style.display === 'none' ) {
+                loadScreen.style.display = 'block'
+            }
+
+
+
+        }
+
+
 
     </script>
 
