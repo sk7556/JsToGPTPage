@@ -6,6 +6,66 @@ body {
 header{
     display : flex;
     border : 1px solid red;
-    flex-wrap : 
+    justify-content: space-between;
+    height : 10%;
+    align-items: center;
+    padding : 5px;
+    margin : 5px;
 
+}
+
+.newCity {
+    margin-left : 30px;
+}
+
+.darkToggle {
+    margin-right : 30px;
+}
+
+.main{
+    display: flex;
+    border : 1px solid blue;
+    justify-content: space-between;
+    height : 10%;
+    align-items: center;
+    margin : 5px;
+    padding : 5px;
+}
+
+.menu {
+    display : flex;
+    flex-direction : row;
+}
+
+.placeButton {
+    border : 1px solid black;
+    margin : 5px;
+    width : 40px;
+    height : 40px;
+    border-radius : 50%;
+    text-align: center;
+}
+
+.mapMenu{
+
+}
+
+.mainField{
+    height : 70%;
+    border : 1px solid purple;
+    margin : 5px;
+    padding : 5px;
+}
+
+footer {
+    display: flex;
+    border : 1px solid cyan;
+    justify-content: space-between;
+    height : 10%;
+    padding : 5px;
+    margin : 5px;
+}
+
+.history {
+    align-items : center;
 }
