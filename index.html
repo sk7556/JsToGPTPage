@@ -55,7 +55,7 @@
             const numberOfDays = $numberOfDays.value;
             data.push({
                 "role":"system",
-                "content": "입력된 관광지의 추천장소" + numberOfDays + "군데 { cityPlace : 이름(영문) } 형식으로 출력. 설명은 뺄 것. "
+                "content": "입력된 관광지의 추천장소" + numberOfDays + "군데 { cityPlace : 이름(영문) } Json형식으로 출력. 설명은 뺄 것. "
             })
             data.push({            
                 "role": "user",
@@ -100,6 +100,10 @@
                 localStorage.setItem($cityDataName,$responseChoice); // Log 저장용
                 localStorage.setItem($cityLog, $city.value); // Log저장용
                 localStorage.setItem($numberOfDaysLog, $numberOfDays.value); // Log 저장용
+                localStorage.setItem('city', $city.value); // Log저장용
+                localStorage.setItem('days', $numberOfDays.value); // Log 저장용
+                
+                
                 // 저장된 값을 파싱 
                 // 문자열을 개별 JSON 문자열로 분리하여 배열로 변환
                 
@@ -142,8 +146,12 @@
         // 다음 페이지로 넘어가는 함수
         function moveNextpage(){
             if( localStorage.getItem($cityData) != ''){
-                window.location.href = "main.html";
+                setTimeout(moveMainpage, 5000);               
             }
+        }
+
+        function moveMainpage(){
+            window.location.href = "main.html";
         }
 
 
