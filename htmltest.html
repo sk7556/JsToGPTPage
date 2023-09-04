@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Document</title>
+    <title>Loading Animation</title>
     <style>
-        .airplane {
-            width : 200px; 
-            position : fixed;
-            top : 45%;
-            left : 45%;
-            transform : translate(-50%, -50%);
-            transition : 1s;
+        body {
+            font-family: Arial, sans-serif;
+            position: relative;
         }
 
-        .moveLeft {
-            top : 55%;
-            left : 55%;
-            transition : 1s;
+        .loading-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi transparent white */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            z-index: 1000; /* This ensures the loading screen is on top of other content */
         }
 
     </style>
 </head>
-    <body style = "background-color: gray;">
-        <img src = "image/airplane.png" class = 'airplane'>  
 
-        <script>        
+<body>
+    <div class="content">
+        <!-- Your main content here -->
+        This is your main content.
+    </div>
+    <div class="loading-screen" id="loadingScreen">
+        loading<span id="dots"></span>
+    </div>
+    <script>
+        let dotsCount = 0;
 
-            const airplaneImg = document.querySelector('.airplane')
-            
-            const moveLeft = function toggleAnimation(){
-                airplaneImg.classList.toggle('.moveLeft');
-            }
+function showLoadingDots() {
+    const dotsElement = document.getElementById('dots');
 
-            setInterval(moveLeft, 2000);
+    if (dotsCount < 3) {
+        dotsElement.textContent += '.';
+        dotsCount++;
+    } else {
+        dotsElement.textContent = '';
+        dotsCount = 0;
+    }
+}
 
-        </script>
+// Call showLoadingDots every second
+setInterval(showLoadingDots, 1000);
 
 
-    </body>
+    </script>
+</body>
+
 </html>

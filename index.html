@@ -13,7 +13,8 @@
             <div class="panel">
                 <input type = "text" class = "city" name = "city" placeholder="가고 싶은 도시명은?">
                 <br>
-                <input type = "number" class = "numberOfDays" name = "numberOfDays" placeholder="몇 일 여행이 될까요?">
+                <input type = "number" class = "numberOfDays" name = "numberOfDays" placeholder="몇 일 여행이 될까요?"
+                max ="5">
                 <br>
                 <button id = "goTravle" type = "submit"> 자 이제 떠나볼까? </button>    
             </div>            
@@ -27,53 +28,60 @@
 
     <div class = "loadingScreen">
         <!-- 로딩 스크린용 암막 구성 -->
-        
-
-
     </div>
 
-    <img src = './image/airplane.png' class = 'airplane'> // 
+    <div class = "loadingAlert">
+        <img src = './image/airplane.png' class = 'airplane'>
+        <div> Loading <span id = "loadText"></span></div>
 
-    <div style = "background;">
-
-    </div>
+    </div>    
 
     <script>
-        var goTravle = document.querySelector('#goTravle')
-        var systemContents = ''
-        var contents = ''
+        const $goTravle = document.querySelector('#goTravle')
         var $tempCity = ''
         var $city = document.querySelector('.city');
         var $numberOfDays = document.querySelector('.numberOfDays');
+        var $cityData = [];
+        const $loadingScreen = document.querySelector('.loadingScreen');
+        const $loadingAlert = document.querySelector('.loadingAlert');
         const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
-        var data = [];
-        // GPT의 질문에 사용될 질문 설정
-        
-        data.push({
-                
-        })
+        const data = []; 
 
         // 이벤트 리스너 발동 시 json 작성 및 fetch 수행
-        goTravle.addEventListener('click', e => {
+        $goTravle.addEventListener('click', e => {
             e.preventDefault()
             // 입력 값을 활용하여 질문 생성 
-            systemContents = "입력된 관광지의 추천장소" + $numberOfDays + "군데 { cityPlace : 이름(영문) } 형식으로 출력. 설명은 뺄 것.";
-            contents = $city.value;
-            data.push({  
-                "role": "system",
-                "content": systemContents,               
+            const contents = $city.value;
+            const numberOfDays = $numberOfDays.value;
+            data.push({
+                "role":"system",
+                "content": "입력된 관광지의 추천장소" + numberOfDays + "군데 { cityPlace : 이름(영문) } 형식으로 출력. 설명은 뺄 것. "
+            })
+            data.push({            
                 "role": "user",
                 "content": contents                
             })
-            $tempCity = $input.value;
-            $input.value = ''
-
-            chatGPTAPI();  
+            $tempCity = $city.value;
+            // $city.value = ''
+            // $numberOfDays.value = ''
+            $cityDataName = 'cityData' + $city.value; // cityData도쿄
+            chatGPTAPI();
+            // for문으로 반복하여 JSON의 배열을 변수에 입력 
+            // 변수 사용시 localStorage에 담은 후 사용하도록 변경  
             
-            
-        })
-
+            setInterval(moveNextpage,2000);          
+            loadingScreen();
+        })       
+        
+        var $cityDataName = '';
+        var $responseChoice = '';
+        var $numberOfDaysLog = '';
+        var $cityLog = '';
+        var $cityDataOriginal = '';        
+        var $cityPlaceNameLS = '';
         function chatGPTAPI() {
+            // 페치를 시작하면 바로 로딩스크린 출력
+            
             fetch(url, {
                 method: 'POST',
                 headers: {
@@ -85,46 +93,58 @@
             .then(res => res.json())
             .then(res => {
                 // 로컬 스토리지에 저장 ( city, numberOfDays )
-                var responseChoice = `${res.choices[0].message.content}`;
-                var cityDataName = 'cityData' + $city;
-                var numberOfDaysLog = 'numberOfDays' + $city;
-                var cityLog = 'city' + $city;
+                $responseChoice = `${res.choices[0].message.content}`;
                 
-                localStorage.setItem(cityDataName,responseChoice); // Log 저장용
-                localStorage.setItem(cityLog, $city); // Log저장용
-                localStorage.setItem(numberOfDaysName, $numberOfDays); // Log 저장용
+                $numberOfDaysLog = 'numberOfDays' + $city.value;
+                $cityLog = 'city' + $city.value;
+                localStorage.setItem($cityDataName,$responseChoice); // Log 저장용
+                localStorage.setItem($cityLog, $city.value); // Log저장용
+                localStorage.setItem($numberOfDaysLog, $numberOfDays.value); // Log 저장용
                 // 저장된 값을 파싱 
-                var cityDataOriginal = localStorage.getItem(cityDataName);
-                var cityData = JSON.parse(cityDataOriginal); // JsonStyle로 변경 
-                // for문으로 반복하여 JSON의 배열을 변수에 입력 
-                // 변수 사용시 localStorage에 담은 후 사용하도록 변경
+                // 문자열을 개별 JSON 문자열로 분리하여 배열로 변환
                 
-                var cityPlaceNameLS = 'cityPlace' + $city; // 로컬스토리지 저장할 도시 방문장소 변수명 저장 
-                
+                $cityDataOriginal = localStorage.getItem($cityDataName);                
+                 // 이걸로 넘어가서 지도를 만들고 메뉴를 만들고 하면됨 
+                // $cityData = $cityDataOriginal.split('\n').map(item => JSON.parse(item)); // JsonStyle로 변경               
+                $cityData = JSON.parse($cityDataOriginal);                
                 for (let i = 0; i < 5; i++) {
-                    var tempPlaceName = 'cityPlace' + $city + i;
-                    localStorage.setItem(tempPlaceName, cityData[i].cityPlace) // ex 변수명 cityPlace도쿄1, 시부야
-                } // 이걸로 넘어가서 지도를 만들고 메뉴를 만들고 하면됨 
-                })
-
-                // 페치가 끝나면서 로딩화면 출력
-                loadingScreen();
-        }
-
-        // LocalStorage의 도시가 있다면 이걸로 구글맵 핀 5개 + 각각 사진 3개 ( API )
-        
+                    const city = $city.value;
+                    var tempPlaceName = 'cityPlace' + city + i;  
+                    var count = i+1;             
+                    localStorage.setItem(tempPlaceName, $cityData['cityPlace'+count]) // ex 변수명 cityPlace도쿄1, 시부야
+                }
+                })   
+        }              
         
         // 로딩화면 함수
         function loadingScreen(){
-            var loadScreen = document.querySelector('.loadingScreen');
-            if ( loadScreen.style.display === 'none' ) {
-                loadScreen.style.display = 'block'
+            if ( $loadingScreen.style.display != 'none' ) {
+                $loadingScreen.style.display = 'block';
+                $loadingAlert.style.display = 'block';
             }
-
-
-
+            setInterval(plusDots, 500);
+        }
+        let dotsCount = 0;
+        
+        // loading의 ... 을 추가하는 함수
+        function plusDots(){
+            const dots = document.querySelector('#loadText');
+            
+            if (dotsCount < 5){
+                dots.textContent += '.';
+                dotsCount++;
+            } else {
+                dots.textContent = '';
+                dotsCount = 0;
+            }
         }
 
+        // 다음 페이지로 넘어가는 함수
+        function moveNextpage(){
+            if( localStorage.getItem($cityData) != ''){
+                window.location.href = "main.html";
+            }
+        }
 
 
     </script>

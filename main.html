@@ -28,14 +28,9 @@
 
     <!-- 페이지 구현 스크립트-->
     <script>
-        // URL 에서 파라미터를 받아오는 쿼리
-        const queryString = window.location.search;
+        // localstorage 에서 { 검색결과 n가지, history 이력 가져오기 }
+        
 
-        // 객체화해서 파스
-        const queryParams = new URLSearchParams(queryString);
-
-        const city = queryParams.get('city');
-        const numberOfDays = queryParams.get('numberOfDays');
 
         const citySpan = $('.city').html(city);
         const daysSpan = $('.numberOfDays').html(numberOfDays);
@@ -47,7 +42,7 @@
 
         cityData1[0].mapCode
 
-
+        // LocalStorage의 도시가 있다면 이걸로 구글맵 핀 5개 + 각각 사진 3개 ( API )    
 
     </script>
 

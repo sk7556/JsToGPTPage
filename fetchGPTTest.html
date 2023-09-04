@@ -22,34 +22,36 @@
         const $answer = document.querySelector('.answer')
         const $answer2 = document.querySelector('.answer2')
         var $fetchAnswer = ''
-
+        const $numberOfDays = $input.value;
         const data = []
-        const data2 = []
         
         // const 는 아예 재선언 자체가 안되어 버리니 
         // 데이터 입력이 첫번째에서 끝나버리는 참사가 
         const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`        
         var contents = ''
         var $tempCity = ''
-        data.push({
-            "role":"system",
-            "content": "입력된 관광지의 추천장소 5군데 { cityPlace : 이름(영문) } 형식으로 출력. 설명은 뺄 것. "
-        })
+        
 
 
         // 이벤트 리스너 발동 시 json 작성 및 fetch 수행
         $button.addEventListener('click', e => {
+            data.push({            
+            "role":"system",
+            "content":"입력된 관광지의 추천장소" + $numberOfDays + "군데 { cityPlace : 이름(영문) } 형식으로 출력. 설명은 뺄 것.",
+            })
+
             e.preventDefault()
+            // 입력 값을 활용하여 질문 생성 
+            
             contents = $input.value;
-            data.push({                
+            data.push({                                 
                 "role": "user",
                 "content": contents                
             })
             $tempCity = $input.value;
             $input.value = ''
 
-            chatGPTAPI();      
-            
+            chatGPTAPI();              
             
         })
 
