@@ -3,25 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Animation</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            background-color: #f1f1f1;
         }
 
-        .centered-div {
-            background-color: yellowgreen;
-            width: 200px;
-            height: 200px;
-            border : 1px solid red;
+        .target {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ddd;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Smooth Scroll Animation */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
-    <title>Document</title>
 </head>
 <body>
-    <div class="centered-div"></div>
+
+<div class="content">
+    <button onclick="scrollToTarget()">Click Me to Slide Down</button>
+</div>
+
+<div class="target" id="targetSection">
+    This is the target section
+</div>
+
+<script>
+    function scrollToTarget() {
+        const targetElement = document.getElementById('targetSection');
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
 </body>
 </html>

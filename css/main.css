@@ -1,17 +1,53 @@
+
+
 body { 
     width : 100vw;
     height : 100vh;
+    display : flex;    
 }
 
-header{
+
+.iphoneWindow {
+    display : flex;
+    position: absolute;
+    justify-content: center;
+}
+
+header{    
+    display : flex;
+    flex-direction: column;
+    position : fixed;
+    z-index : 100;
+    top : 0;
+    font-size : 20px;
+    border-radius : 5px;   
+    width : 90%;  
+}
+
+.topMenu {
     display : flex;
     border : 1px solid red;
+    border-radius: 10px;
     justify-content: space-between;
-    height : 10%;
+    height : 60px;
     align-items: center;
     padding : 5px;
     margin : 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
+.subMenu {
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.menu {
+    display : flex;
+    flex-direction : row;
 }
 
 .newCity {
@@ -26,15 +62,13 @@ header{
     display: flex;
     border : 1px solid blue;
     justify-content: space-between;
-    height : 10%;
     align-items: center;
     margin : 5px;
     padding : 5px;
 }
 
-.menu {
-    display : flex;
-    flex-direction : row;
+.menuMargin {
+    height : 110px;
 }
 
 .placeButton {
@@ -47,25 +81,59 @@ header{
 }
 
 .mapMenu{
-
+    margin-right : 10px;
 }
 
 .mainField{
-    height : 70%;
+    margin-top : 1000px;
     border : 1px solid purple;
     margin : 5px;
     padding : 5px;
 }
 
-footer {
-    display: flex;
-    border : 1px solid cyan;
-    justify-content: space-between;
-    height : 10%;
-    padding : 5px;
-    margin : 5px;
+#mapField{
+    height : 500px;
+    border : 2px solid darkred;
 }
 
-.history {
-    align-items : center;
+.placeField{
+    height : 500px;
+    border : 2px solid darkorange;
+}
+
+
+#place1{
+    display : block;
+    height : 500px;
+    border : 4px solid black;
+}
+
+#place2{
+    display : block;
+    height : 500px;
+    border : 4px solid black;
+}
+
+#place3{
+    display : block;
+    height : 500px;
+    border : 4px solid black;
+}
+
+#place4{
+    display : block;
+    height : 500px;
+    border : 4px solid black;
+}
+
+#place5{
+    display : block;
+    height : 500px;
+    border : 4px solid black;
+} 
+
+
+.blank {        
+    border : 1px solid cyan;
+    height : 500px;
 }
