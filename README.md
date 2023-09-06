@@ -1,13 +1,13 @@
 <h1 align = "center"> 10초만에 세계여행 </h1>
 
 **[ 목차 ]** 
-1. 프로젝트 기획
-2. 프로젝트 시연
-3. UI 구조
-4. 구현 기능
-5. 데이터 구조
-6. 개발 이슈
-7. 링크
+1. [프로젝트 기획](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#1-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B8%B0%ED%9A%8D)
+2. [프로젝트 시연](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
+3. [UI 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
+4. [구현 기능](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
+5. [데이터 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
+6. [개발 이슈](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
+7. [링크](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
 
 # 1. 프로젝트 기획
 
@@ -39,15 +39,16 @@ GPT AI 의 기능을 활용해내는 페이지를 만들고자 했습니다
 # 2. 프로젝트 시연
 **[ 키워드 입력 및 로딩 ( index.html ) ]**
 
-<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/c0fe945a-cc67-4468-a2b0-4dcd158a9e94" width = "300" height = "480">
+<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/03bd4485-3722-445a-a33b-36d4bc5c3c6f" width = "300" height = "480">
 
 **[ 지도 / 추천 장소 이미지 출력, 화면 이동 ]**
 
-<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/48da7023-ace4-420e-b902-89f8061ad497" width = "300" height = "480">
+<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/742edad1-c97b-4536-be3a-d0883e53c6b9" width = "300" height = "480">
 
 **[ 이미지 전환 ]**
 
 <img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/53858690-bd01-4419-a797-2f94ced525bb" width = "300" height = "480">
+
 
 # 3. UI 구조
 <img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/b7ee5662-4bac-4a9e-af81-7acfba752b65" width = "795" height = "275">
