@@ -5,7 +5,6 @@ function loadingScreen(){
         $loadingAlert.style.display = 'block';
     }
     setInterval(plusDots, 500);
-    $loadingScreen.style.display = 'none';
 }
 let dotsCount = 0;
 
@@ -25,10 +24,14 @@ function plusDots(){
 // 다음 페이지로 넘어가는 함수
 function moveNextpage(){
     if( localStorage.getItem($cityData) != ''){
-        setTimeout(moveMainpage, 5000);               
+        setTimeout(moveMainpage, 5000);
+        
+                      
     }
 }
 
 function moveMainpage(){
+    $loadingScreen.style.display = 'none'; 
     window.location.href = "main.html";
+    
 }

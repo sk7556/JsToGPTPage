@@ -172,6 +172,10 @@ header{
     font-family : 
 }
 
+#map{
+    margin-bottom : 300px;
+}
+
 #mapField{
     height : 780px;
     margin-bottom: 50px;
