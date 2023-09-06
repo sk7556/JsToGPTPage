@@ -34,7 +34,7 @@ body {
 
 
 .titleContent {
-  margin-bottom: 120px;
+  margin-bottom: 100px;
 }
 
 .title {
@@ -43,7 +43,7 @@ body {
 }
 
 .content {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .city,
@@ -51,6 +51,9 @@ body {
 #goTravle {
   font-size: 30px;
   border-radius: 10px;
+  padding : 10px;
+  padding-left : 25px;
+  padding-right : 25px;
 }
 
 
