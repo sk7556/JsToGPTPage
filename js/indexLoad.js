@@ -5,6 +5,7 @@ function loadingScreen(){
         $loadingAlert.style.display = 'block';
     }
     setInterval(plusDots, 500);
+    $loadingScreen.style.display = 'none';
 }
 let dotsCount = 0;
 
