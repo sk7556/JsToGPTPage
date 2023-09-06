@@ -19,7 +19,7 @@
         </div>
         <header>
             <div class = "topMenu">
-                <img src = "./image/leftArrow.png" onclick = "window.history.back();" class = "topArrow">
+                <img src = "./image/leftArrow.png" onclick = "window.history.back();" class = "topArrow" title = "질문화면으로 돌아가기">
                 <div class = "currentInform">
                     <span class = "city" > City </span>
                     <span class = "days"> Days </span>
@@ -27,14 +27,14 @@
             </div>            
             <div class = "subMenu">
                 <div class = "menu">
-                    <span class = "placeButton" onclick="scrollToTarget('place1')"> p1 </span>
+                    <span class = "placeButton" onclick="scrollToTarget('place1')" > p1 </span>
                     <span class = "placeButton" onclick="scrollToTarget('place2')"> p2 </span>
                     <span class = "placeButton" onclick="scrollToTarget('place3')"> p3 </span>
                     <span class = "placeButton" onclick="scrollToTarget('place4')"> p4 </span>
                     <span class = "placeButton" onclick="scrollToTarget('place5')"> p5 </span>
                 </div>
-                <span class = "mapMenu" onclick="scrollToTarget('mapField')">
-                    Map
+                <img src = "./image/map.png" class = "mapButton" onclick="scrollToTarget('mapField')">
+                    
                 </span>
             </div>
         </header>
@@ -42,18 +42,13 @@
             <div class = "mainField"> <!-- 슬라이드로 상하 이동이 가능하도록 하자  -->
                 <div class = "menuMargin"></div>
                 <div Id = "mapField">
-                    <div> </div>
-                    <div id="map" style="width: 100%; height: 500px;"></div>
                     <div class = "mapContent">
                         <div class = "cityName"></div>
-                        <ul>
-                            <li class = "cityList"></li>
-                            <li class = "cityList"></li>
-                            <li class = "cityList"></li>
-                            <li class = "cityList"></li>
-                            <li class = "cityList"></li>
+                        <ul class = "placeList">
                         </ul>                                              
                     </div>
+                    <div id="map" style="width: 100%; height: 500px;"></div>
+                    
                 </div>
                 <div class = "placeField">
                     <div id = "place1">
@@ -185,12 +180,19 @@
         // placeButton
         function placeToClass(){
             const placeButton = document.getElementsByClassName('placeButton');
+            const ul = document.getElementsByClassName('placeList');
+            for(i=0; i<numberOfDays; i++){
+                let li = document.createElement('li');
+                li.className = 'cityList';
+                ul[0].appendChild(li)
+                
+            }
             const cityContentList = document.getElementsByClassName('cityList');
             
-            for( i = 0; i < numberOfDays; i++){
-                
+            for( i = 0; i < numberOfDays; i++){                
                 placeButton[i].textContent = cityPlaceArr[i].slice(0,1);
                 placeButton[i].style.display = 'block';
+                placeButton[i].title = cityPlaceArr[i];
                 cityContentList[i].textContent = cityPlaceArr[i];
                 
             }
@@ -205,7 +207,6 @@
             
             if(i % 3 == 1 || i % 3 == 2){
                 placeCard[i].style.display = 'none';
-                console.log(i);
             }
         }
 
@@ -247,7 +248,7 @@
         function scrollToTarget(Id) {
             const targetElement = document.getElementById(Id);
             const rect = targetElement.getBoundingClientRect();
-            const offsetTop = window.pageYOffset + rect.top - 260;
+            const offsetTop = window.pageYOffset + rect.top - 270;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'

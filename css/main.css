@@ -8,6 +8,7 @@ body {
      display: flex;
      justify-content: center;
      font-family: 'Sunflower', sans-serif;
+     overflow: hidden;
 }
 
 .mobileSized{
@@ -100,31 +101,41 @@ header{
 .placeButton {
     border : 2px solid black;
     margin : 5px;
-    width : 40px;
-    height : 40px;
+    width : 50px;
+    height : 50px;
     border-radius : 20%;
     text-align: center;
     display : none;
     font-weight: bold;
-    padding-top : 2px;
+    padding-top : 7px;
     padding-right : 2px;
+    animation : shake 2s linear infinite
 }
 
-.mapMenu{
-    margin-right : 10px;
-    border : 2px solid black;
+@keyframes shake {
+    0% { transform: rotate(-35deg); }
+    20% { transform: rotate(0deg); }
+    40% { transform: rotate(35deg);}
+    60% { transform: rotate(0deg);}
+    100% { transform: rotate(-35deg); }
+  }
+
+.mapButton{
+    width : 55px;
+    margin : 5px;
+    background-color: blue;
+    opacity: 0.6;
     border-radius: 20%;
-    padding-left : 30px;
-    padding-right: 30px;;
-    font-size : 25px;
-    font-weight: bold;
-    padding-top : 2px;
-}
+} 
 
 .currentInform{
     font-family: 'Sunflower', sans-serif;
     font-size : 30px;
     margin-left : 20px;
+}
+
+.cityList {
+    font-size : 20px;
 }
 
 .cityName{
@@ -208,16 +219,18 @@ header{
 
 .cardComment{
     position : absolute;
-    font-size : 20px;
+    font-size : 25px;
     z-index: 1500;
     left : 30px;
     top : 430px;
+    width : 240px;
+    overflow-wrap: break-word;
 }
 
 .nextArrow{
     position : absolute;
-    width : 60px;
-    height : 60px;    
+    width : 100px;
+    height : 70px;    
     z-index: 1500;
     right : 30px;
     top : 420px;

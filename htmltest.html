@@ -4,51 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-    .scrollable {
-        width: 300px;
-        overflow: hidden;
-        white-space: nowrap;
-    }
-
-    .content {
-        display: inline-block;
-    }
-
-
-    </style>
 </head>
 <body>
-    <div id="scrollable-div" class="scrollable" style = "border : 2px solid black">
-        <div class="content" >
-            <img src = "./image/airplane.png" style = "width : 300px;">
-        </div>
-        <div class="content" >
-            <img src = "./image/airplane.png" style = "width : 300px;">
-        </div>
-        <div class="content" >
-            <img src = "./image/airplane.png" style = "width : 300px;">
-        </div>
-        <div class="content" >
-            <img src = "./image/airplane.png" style = "width : 300px;">
-        </div>
-    </div>
+    <ul class = "tt">
+
+    </ul>
     <script>
-        const scrollableDiv = document.getElementById('scrollable-div');
-
-        let startX;
-
-        scrollableDiv.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        }, false);
-
-        scrollableDiv.addEventListener('touchmove', (e) => {
-            let touch = e.touches[0];
-            let change = startX - touch.clientX;
-
-            scrollableDiv.scrollLeft += change;
-            startX = touch.clientX;
-        }, false);
+        const ul = document.querySelector('.tt');
+        let il = document.createElement('il');
+                
+                il.className = 'cityList';
+                ul.appendChild(il)
     </script>
 </body>
 </html>
