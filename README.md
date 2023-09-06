@@ -1,8 +1,8 @@
 <h1 align = "center"> 10초만에 세계여행 </h1>
 
 **[ 목차 ]** 
-1. [프로젝트 기획](#1.프로젝트-기획)
-2. [구현 기능](#2.구현-기능)
+1. [프로젝트 기획]([#1.프로젝트-기획](https://github.com/sk7556/JsToGPTPage/edit/main/README.md#1-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B8%B0%ED%9A%8D))
+2. [구현 기능]([#2.구현-기능](https://github.com/sk7556/JsToGPTPage/edit/main/README.md#2-%EA%B5%AC%ED%98%84-%EA%B8%B0%EB%8A%A5))
 3. [UI 구조](#3.UI-구조)
 4. [프로젝트 시연](#4.프로젝트-시연)
 5. [데이터 구조](#5.데이터-구조)
@@ -19,43 +19,53 @@
 **[ 주제 선정 ]**
 
 GPT AI를 여러번 테스트하며 문장식으로 줄 수 있는 답변을 최대한 활용하기 좋은 데이터로 정리해내고 싶다는 생각을 하였습니다
+
 유저에게 시각적으로 자극을 주고 싶었고, SNS를 보듯이 최소한의 입력으로 화면을 쓱쓱 넘기면서 보는 경험을 제공하고 싶었습니다
+
 지도와 여행과 관련된 소재를 활용하여 여행에 대한 자극을 추가하면 좋겠다는 마음으로 주제를 선정하게 되었습니다
 
 **[ 기술 활용 목표 ]**
 
 HTML / CSS / Javascript 의 기본적인 활용과 
+
 Javascript를 통해 서버와 통신하는 fetch 기능을 활용하여 
+
 GPT AI 의 기능을 활용해내는 페이지를 만들고자 했습니다
 
 추가적으로 현재 비슷한 구조로 Javascript.fetch - API를 제공하는 서비스를 활용해보고 
+
 관련된 이해를 높이는 경험을 하고자 준비했습니다
+
 
 # 2. 구현 기능
 
 **[ HTML / CSS ]**
 
 모바일 화면을 목표로 레이아웃, 양식을 적용했습니다
+
 Main 화면의 경우엔 스크롤 방식의 화면 이동방식을 구현했습니다
 
 **[ JavaScript ]**
 
 HTML / CSS를 보조하여 화면을 구성하는 로직을 만들고,
+
 fetch를 이용하여 GPT AI와 API를 활용하였습니다
 
-**[ GPT 프롬프트 엔지니어링 ] **
+**[ GPT 프롬프트 엔지니어링 ]**
 
 여행지를 추천받으며 가공하기 쉬운 형태로의 결과물을 도출하기 위해 프롬프트를 구성했습니다
+
 페이지 이동에 지연을 줄이기 위해 데이터 교환의 위치를 분배하려 했습니다
 
 **[ API 리소스 활용 ]**
 
-Google Map API , unsplash API ( 이미지 검색 및 로드 ) 를 활용했으며, 
+Google Map API , unsplash API ( 이미지 검색 및 로드 ) 를 활용했으며,
+
 학습이나 개인개발용으로 활용 가능한 API를 사용했습니다 
+
 
 # 3. UI 구조
 ![uiImage](https://github.com/sk7556/JsToGPTPage/assets/109896609/47a796f3-8bb8-47d3-808a-12e119d0a7ae)
-
 
 
 
@@ -73,6 +83,7 @@ Google Map API , unsplash API ( 이미지 검색 및 로드 ) 를 활용했으�
 <img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/53858690-bd01-4419-a797-2f94ced525bb" width = "300" height = "480">
 
 
+
 # 5. 데이터 구조
 ![dataflow](https://github.com/sk7556/JsToGPTPage/assets/109896609/c0141dc3-0a89-4835-a77d-8b121e52d15a)
 
@@ -83,7 +94,6 @@ Google Map API , unsplash API ( 이미지 검색 및 로드 ) 를 활용했으�
 <img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/1b2a1525-41a1-4080-ac90-7f55ac78d390" width = "300" height = "480">
 
 <p align = "left">작업 파일 트리</p>
-
 
 
 # 6. 개발 이슈
