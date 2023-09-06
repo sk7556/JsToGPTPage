@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Maps 장소 표현</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqwnYCgWy-a9Y12YpC860itvVNCCFh67o&callback&libraries=places"></script>
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 600px;"></div>
+
+    <script>
+        function initMap() {
+            var seoul = { lat: 37.5665, lng: 126.9780 }; // 서울의 기본 좌표
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: seoul
+            });
+
+            var places = [
+                "Gyeongbokgung Palace",
+                "Myeongdong",
+                "Bukchon Hanok Village",
+                "N Seoul Tower"
+            ];
+
+            var service = new google.maps.places.PlacesService(map);
+
+            places.forEach(placeName => {
+                service.findPlaceFromQuery({
+                    query: placeName,
+                    fields: ['geometry']
+                }, function(results, status) {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+                    } else {
+                        console.error(`Error fetching location for ${placeName}: ${status}`);
+                    }
+                });
+            });
+        }
+
+        window.onload = initMap;
+    </script>
+</body>
+</html>

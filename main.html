@@ -6,23 +6,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Map API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqwnYCgWy-a9Y12YpC860itvVNCCFh67o&callback=initMap" async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Sunflower:wght@300&display=swap" rel="stylesheet">
 
 </head>
 
-<body>
-    
+<body>    
     <div class = "mobileSized">
         <div class = "iphoneWindow">
             <img src = "./image/iphone.png" class = "iphone">
         </div>
         <header>
             <div class = "topMenu">
-                <img src = "./image/leftArrow.png" onclick = "window.history.back();" style = "width : 20px">
+                <img src = "./image/leftArrow.png" onclick = "window.history.back();" class = "topArrow">
                 <div class = "currentInform">
-                    <span> City </span>
-                    <span> Days </span>
+                    <span class = "city" > City </span>
+                    <span class = "days"> Days </span>
                 </div>
-                <div class = "darkToggle"> Dark / Bright </div>
             </div>            
             <div class = "subMenu">
                 <div class = "menu">
@@ -41,15 +42,101 @@
             <div class = "mainField"> <!-- 슬라이드로 상하 이동이 가능하도록 하자  -->
                 <div class = "menuMargin"></div>
                 <div Id = "mapField">
+                    <div> </div>
                     <div id="map" style="width: 100%; height: 500px;"></div>
-                    <div class = "mapContent"> 설명 </div>
+                    <div class = "mapContent">
+                        <div class = "cityName"></div>
+                        <ul>
+                            <li class = "cityList"></li>
+                            <li class = "cityList"></li>
+                            <li class = "cityList"></li>
+                            <li class = "cityList"></li>
+                            <li class = "cityList"></li>
+                        </ul>                                              
+                    </div>
                 </div>
                 <div class = "placeField">
-                    <div id = "place1"> place 1 </div>
-                    <div id = "place2"> place 2 </div>
-                    <div id = "place3"> place 3 </div>
-                    <div id = "place4"> place 4 </div>
-                    <div id = "place5"> place 5 </div>
+                    <div id = "place1">
+                        <div class = "cardCase">
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>                                
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>
+                        </div> 
+                    </div>
+                    <div id = "place2">  
+                        <div class = "cardCase">
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>                                
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>
+                        </div> 
+                    </div>
+                    
+                    <div id = "place3">  
+                        <div class = "cardCase">
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>                                
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>
+                        </div> 
+                    </div>
+                    <div id = "place4">  
+                        <div class = "cardCase">
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>                                
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>
+                        </div> 
+                    </div>
+                    <div id = "place5">  
+                        <div class = "cardCase">
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>                                
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>
+                            <div class = "placeCard">
+                                <span class = "cardComment"> cardComment </span>
+                                <img src = "./image/next.png" class = "nextArrow">
+                            </div>
+                        </div> 
+                    </div>
                     <div class = "blank"></div>
                 </div>       
                 
@@ -61,33 +148,17 @@
         
         
     </div>   
-    
-    
 
-    
-    
-    
+ <!-- 스크립트 시작 -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 페이지 구현 스크립트-->
     <script>
+        // 페이지 초기화 
+        
+    </script>
+
+    
+    <!-- 페이지 구현 스크립트-->
+    <script>        
         // localstorage 에서 { 검색결과 n가지, history 이력 가져오기 }
         const cityName = localStorage.getItem('city');  // 
         const numberOfDays = localStorage.getItem('days');
@@ -97,28 +168,72 @@
         const cityPlace2 = localStorage.getItem('cityPlace'+cityName+1);
         const cityPlace3 = localStorage.getItem('cityPlace'+cityName+2);
         const cityPlace4 = localStorage.getItem('cityPlace'+cityName+3);
-        const cityPlace5 = localStorage.getItem('cityPlace'+cityName+4);   
+        const cityPlace5 = localStorage.getItem('cityPlace'+cityName+4);  
+        const cityPlaceArr = [cityPlace1, cityPlace2, cityPlace3, cityPlace4, cityPlace5]
+        const placeNumArr = ['place1','place2','place3','place4','place5'];   
     </script>
 
-    <script> // Google Map API 
+<!-- 페이지 요소에 변수 담기 -->
+    <script>
+        const topCity = document.getElementsByClassName('city');
+        topCity[0].textContent = cityName + "  / ";
+        const topDay = document.getElementsByClassName('days');
+        topDay[0].textContent = numberOfDays + "일 여행";
+        const cityContentName = document.getElementsByClassName('cityName');
+        cityContentName[0].textContent = cityName;
+
+        // placeButton
+        function placeToClass(){
+            const placeButton = document.getElementsByClassName('placeButton');
+            const cityContentList = document.getElementsByClassName('cityList');
+            
+            for( i = 0; i < numberOfDays; i++){
+                
+                placeButton[i].textContent = cityPlaceArr[i].slice(0,1);
+                placeButton[i].style.display = 'block';
+                cityContentList[i].textContent = cityPlaceArr[i];
+                
+            }
+        }
+        placeToClass();
+        
+        // cardCommet 메세지 담기
+        for(i = 0; i < numberOfDays*3; i++){
+            const cardComment = document.getElementsByClassName('cardComment');
+            const placeCard = document.getElementsByClassName('placeCard');
+            cardComment[i].textContent = cityPlaceArr[i/3];
+            
+            if(i % 3 == 1 || i % 3 == 2){
+                placeCard[i].style.display = 'none';
+                console.log(i);
+            }
+        }
+
+        // cardComment
+
+    </script>
+
+
+
+<!--Google Map API--> 
+    <script> 
+        
         function initMap() {
         const mapOptions = {
-            zoom: 15 // Zoom level
+            zoom: 12 // Zoom level
         };
-
+        
         const map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
         const geocoder = new google.maps.Geocoder();
-
-        geocoder.geocode({ address: '아키하바라' }, function (results, status) {
+        
+        geocoder.geocode({ address: city }, function (results, status) {
             if (status === google.maps.GeocoderStatus.OK) {
-            const location = results[0].geometry.location;
-
+            const location = results[0].geometry.location;            
             const marker = new google.maps.Marker({
                 position: location,
                 map: map,
-                title: '아키하바라'
-            });
+                title: location
+            });            
 
             map.setCenter(location);
             } else {
@@ -138,7 +253,71 @@
                 behavior: 'smooth'
             });
         }
+        // 페이지 초기화에 사용 
+        scrollToTarget('mapField');
     </script>
+    
+    <script>  // 이미지 검색 API 
+        specifyCity();
+        function specifyCity(){ // undefiend 인 
+            for ( i = 0; i < numberOfDays; i++){
+                searchImage(cityPlaceArr[i],3*i,3*i+1,3*i+2);
+            }
+        }
+        
+        function searchImage(tourPlace, classNum1, classNum2, classNum3) {
+            const searchTerm = tourPlace;
+            const apiKey = 'mLZ-RAfNgwAWfURctJYWQLRHrSL63b1jbSF55xKyW4E'; 
+
+            fetch(`https://api.unsplash.com/search/photos?query=${searchTerm}&client_id=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    displayImage(data.results[0].urls.regular, classNum1);
+                    displayImage(data.results[1].urls.regular, classNum2);
+                    displayImage(data.results[2].urls.regular, classNum3);
+                });
+        }
+
+        // 이미지 디스플레이 메서드, appendDiv 로 출력할 객체를 지정 
+        function displayImage(imageUrl, number) {
+            const placeCard = document.getElementsByClassName('placeCard');
+            const image = new Image();
+            image.src = imageUrl;
+            image.className = 'postImage';            
+            placeCard[number].appendChild(image);
+        }
+    </script>
+    <script>
+        // nextArrow 버튼 fade 및 다음 페이지 이동 처리
+        document.addEventListener("DOMContentLoaded", function() {
+            let cards = document.querySelectorAll(".placeCard");
+            let nextArrows = document.querySelectorAll(".nextArrow");
+
+            for (let i = 0; i < 15; i++) {
+                nextArrows[i].addEventListener("click", function() {
+                let temp = i;
+        
+                cards[temp].classList.remove("fade-in");
+                cards[temp].classList.add("fade-out");
+                cards[temp].style.display = "none";
+        
+                if (temp % 3 == 2) {
+                    temp = temp - 2;
+                    console.log('check' + temp);
+                    cards[temp].style.display = "block";
+                    cards[temp].classList.remove("fade-out");
+                    cards[temp].classList.add("fade-in");
+                } else {
+                    cards[temp + 1].style.display = "block";
+                    cards[temp + 1].classList.remove("fade-out");
+                    cards[temp + 1].classList.add("fade-in");
+                }
+        });
+}
+
+        });
+    </script>
+    
 
 
 </body>
