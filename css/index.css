@@ -1,139 +1,148 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Sunflower:wght@300&display=swap');
 
 
-html, body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-  .mobileSized{
-    width : 480px;
-    height : 100vh;
-    display : flex;
-    margin-top : 70px;
+.mobileSized {
+  width: 480px;
+  height: 100vh;
+  display: flex;
+  margin-top: 70px;
 }
 
 .iphoneWindow {
-    display : flex;
-    position: fixed;
-    justify-content: center;
-    top : 75px;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  top: 75px;
 }
 
 .iphone {
-    width : 475px;
-    top : 0;
-    right : 0;
+  width: 475px;
+  top: 0;
+  right: 0;
 }
 
 
 
 
-.titleContent{
-  margin-bottom : 120px;
+.titleContent {
+  margin-bottom: 120px;
 }
 
-.title { 
+.title {
   font-family: 'Sunflower', sans-serif;
-  font-size : 42px;
+  font-size: 42px;
 }
 
-.content{
-  font-size : 15px;
-}
-  
-.city, .numberOfDays, #goTravle {
-    font-size : 30px;
+.content {
+  font-size: 15px;
 }
 
+.city,
+.numberOfDays,
+#goTravle {
+  font-size: 30px;
+}
 
-  .loadingScreen{
-    width : 98%;
-    height : 98%;
-    background-color: black;
-    position: absolute;
-    z-index: 1000;
-    opacity: 0.8;
-    display : none;
-  }
 
-  .loadingAlert{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    z-index: 1500; 
-    color : white;
-    flex-direction: column;
-    display : none;
-  }
+.loadingScreen {
+  width: 98%;
+  height: 98%;
+  background-color: black;
+  position: absolute;
+  z-index: 1000;
+  opacity: 0.8;
+  display: none;
+}
 
-  .airplane{
-    width : 200px;     
-    animation : moveLR 2s linear infinite
-  }
-  
-  @keyframes moveLR {
-    0% { transform : rotate(-5deg); }
-    50% {  transform : rotate(20deg);}
-    100% {  transform : rotate(-5deg);}
-  }  
+.loadingAlert {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  z-index: 1500;
+  color: white;
+  flex-direction: column;
+  display: none;
+}
 
-  #indexForm{
-      display : flex;
-      flex-direction: column;
-      position : fixed;
-      z-index : 100;
-      font-size : 20px; 
-      height : 1009px;  
-      margin-top : 34px;
-      padding : 8px;
-      margin-left : 0;
+.airplane {
+  width: 200px;
+  animation: moveLR 2s linear infinite
+}
+
+@keyframes moveLR {
+  0% {
+    transform: rotate(-5deg);
   }
 
-  
-  .panel {
-    padding:1vmin;
-    width : 445px;
-    background-color:#fff;
-    border:solid 2px black;
-    border-radius: 50px;
-    box-shadow:0 6px 6px -6px #000;
-    flex:1 1;
-    height:900px;
-    margin:1vmin;
-    overflow:hidden;
-    position:relative;
-    display: flex;
-    /* 패널 중앙으로 정렬 */ 
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  50% {
+    transform: rotate(20deg);
   }
-  
-  .text {
-    background-color:#fff;
-    border:solid 2px #000;
-    margin:0;
-    padding:3px 10px;
+
+  100% {
+    transform: rotate(-5deg);
   }
-  
-  .speech {
-    background-color:#fff;
-    border:solid 2px #000;
-    border-radius:12px;
-    display:inline-block;
-    margin:.5em;
-    padding:.5em 1em;
-    position:relative;
-  }  
-  
-  .panel {
-    background-image:radial-gradient(circle, yellow, orange);
-  }
-  
+}
+
+#indexForm {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 100;
+  font-size: 20px;
+  height: 1009px;
+  margin-top: 34px;
+  padding: 8px;
+  margin-left: 0;
+}
+
+
+.panel {
+  padding: 1vmin;
+  width: 445px;
+  background-color: #fff;
+  border: solid 2px black;
+  border-radius: 50px;
+  box-shadow: 0 6px 6px -6px #000;
+  flex: 1 1;
+  height: 900px;
+  margin: 1vmin;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  /* 패널 중앙으로 정렬 */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text {
+  background-color: #fff;
+  border: solid 2px #000;
+  margin: 0;
+  padding: 3px 10px;
+}
+
+.speech {
+  background-color: #fff;
+  border: solid 2px #000;
+  border-radius: 12px;
+  display: inline-block;
+  margin: .5em;
+  padding: .5em 1em;
+  position: relative;
+}
+
+.panel {
+  background-image: radial-gradient(circle, yellow, orange);
+}
