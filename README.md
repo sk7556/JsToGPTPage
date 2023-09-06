@@ -3,11 +3,11 @@
 **[ 목차 ]** 
 1. [프로젝트 기획](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#1-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B8%B0%ED%9A%8D)
 2. [프로젝트 시연](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
-3. [UI 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
-4. [구현 기능](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
-5. [데이터 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
-6. [개발 이슈](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
-7. [링크](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
+3. [UI 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#3-ui-%EA%B5%AC%EC%A1%B0)
+4. [구현 기능](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#4-%EA%B5%AC%ED%98%84-%EA%B8%B0%EB%8A%A5)
+5. [데이터 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#5-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0)
+6. [개발 이슈](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#6-%EA%B0%9C%EB%B0%9C-%EC%9D%B4%EC%8A%88)
+7. [링크](https://github.com/sk7556/JsToGPTPage#7-%EB%A7%81%ED%81%AC)
 
 # 1. 프로젝트 기획
 
