@@ -16,32 +16,32 @@
         <div class = "iphoneWindow">
             <img src = "./image/iphone.png" class = "iphone">
         </div>
-    </div>
-    <form id = "indexForm">
-        
-
-        <article class="panel" onsubmit="checkInput(event)">
-            <div class = "titleContent">
-                <h1 class = "title">10초만에 여행가기</h1>
+        <form id = "indexForm">
+            <article class="panel" onsubmit="checkInput(event)">
+                <div class = "titleContent">
+                    <h1 class = "title">10초만에 여행가기</h1>
+                    <br>
+                    <li class = "content"> 도시이름 / 여행일자를 입력합니다 </li> 
+                    <li class = "content"> 여행일만큼 주변여행지를 추천받고 </li>
+                    <li class = "content"> 사진을 제공 받을 수 있습니다</li>
+                    <li class = "content"> 최대 5일 검색이 가능합니다 </li>
+    
+                </div>
+                <input type = "text" class = "city" name = "city" placeholder="가고 싶은 도시명은?">
                 <br>
-                <li class = "content"> 도시이름 / 여행일자를 입력합니다 </li> 
-                <li class = "content"> 여행일만큼 주변여행지를 추천받고 사진을 제공 받을 수 있습니다</li>
-                <li class = "content"> 최대 5일 검색이 가능합니다 </li>
-
-            </div>
-            <input type = "text" class = "city" name = "city" placeholder="가고 싶은 도시명은?">
-            <br>
-            <input type = "number" class = "numberOfDays" name = "numberOfDays" placeholder="몇 일 여행이 될까요?"
-            max ="5">
-            <br>
-            <button id = "goTravle" type = "submit"> 자 이제 떠나볼까? </button>    
-        </article>  
-        
-        <!-- 위 폼의 경우, Enter로 버튼을 누르는 기능을 추가하기 위해 submit 유형을 추가함 -->
-        <!-- city / numberOfDays 를 fetch 로 GPT의 데이터를 받아오고 -->
-        <!-- Loading 화면 중, GPT의 처리와 Parsing 등을 전부 진행함으로서 처리 대기 시간을 확보 -->
-        
-    </form>
+                <input type = "number" class = "numberOfDays" name = "numberOfDays" placeholder="몇 일 여행이 될까요?"
+                max ="5">
+                <br>
+                <button id = "goTravle" type = "submit"> 자 이제 떠나볼까? </button>    
+            </article>  
+            
+            <!-- 위 폼의 경우, Enter로 버튼을 누르는 기능을 추가하기 위해 submit 유형을 추가함 -->
+            <!-- city / numberOfDays 를 fetch 로 GPT의 데이터를 받아오고 -->
+            <!-- Loading 화면 중, GPT의 처리와 Parsing 등을 전부 진행함으로서 처리 대기 시간을 확보 -->
+            
+        </form>
+    </div>
+    
 
     <div class = "loadingScreen">
         <!-- 로딩 스크린용 암막 구성 -->

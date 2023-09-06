@@ -13,13 +13,25 @@ html, body {
   .mobileSized{
     width : 480px;
     height : 100vh;
+    display : flex;
     margin-top : 70px;
-    position : absolute;
+}
+
+.iphoneWindow {
+    display : flex;
+    position: fixed;
+    justify-content: center;
+    top : 75px;
 }
 
 .iphone {
     width : 475px;
+    top : 0;
+    right : 0;
 }
+
+
+
 
 .titleContent{
   margin-bottom : 120px;
@@ -72,14 +84,25 @@ html, body {
     100% {  transform : rotate(-5deg);}
   }  
 
+  #indexForm{
+      display : flex;
+      flex-direction: column;
+      position : fixed;
+      z-index : 100;
+      font-size : 20px; 
+      height : 1009px;  
+      margin-top : 34px;
+      padding : 8px;
+      margin-left : 0;
+  }
 
   
   .panel {
     padding:1vmin;
-    width : 460px;
+    width : 445px;
     background-color:#fff;
     border:solid 2px black;
-    border-radius: 20px;
+    border-radius: 50px;
     box-shadow:0 6px 6px -6px #000;
     flex:1 1;
     height:900px;
