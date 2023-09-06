@@ -39,15 +39,12 @@ GPT AI 의 기능을 활용해내는 페이지를 만들고자 했습니다
 # 2. 프로젝트 시연
 **[ 키워드 입력 및 로딩 ( index.html ) ]**
 
-<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/03bd4485-3722-445a-a33b-36d4bc5c3c6f" width = "300" height = "480">
+<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/03bd4485-3722-445a-a33b-36d4bc5c3c6f" width = "300" height = "680">
 
 **[ 지도 / 추천 장소 이미지 출력, 화면 이동 ]**
 
-<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/742edad1-c97b-4536-be3a-d0883e53c6b9" width = "300" height = "480">
+<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/742edad1-c97b-4536-be3a-d0883e53c6b9" width = "300" height = "680">
 
-**[ 이미지 전환 ]**
-
-<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/53858690-bd01-4419-a797-2f94ced525bb" width = "300" height = "480">
 
 
 # 3. UI 구조
