@@ -16,6 +16,8 @@ body {
     height : 100vh;
     display : flex;
     margin-top : 70px;
+    z-index: 2000;
+    background-color: white;
 }
 
 .iphoneWindow {
@@ -36,14 +38,20 @@ header{
     flex-direction: column;
     position : fixed;
     z-index : 100;
-    top : 70;
+    top : 35;
     font-size : 20px;
-    border-radius : 20px;   
+    border-radius : 45px;   
     width : 450px;  
     margin-top : 50px;
     margin-left : 12px;
     background-color : white;
     padding : 8px;
+}
+
+.dynamicIsland{
+    height : 30px;
+    border-radius: 50%;
+    background-color: white;
 }
 
 .topMenu {
@@ -70,6 +78,10 @@ header{
 .menu {
     display : flex;
     flex-direction : row;
+}
+
+.container{
+    
 }
 
 .newCity {
