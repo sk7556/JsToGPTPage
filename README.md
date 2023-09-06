@@ -65,9 +65,7 @@ Google Map API , unsplash API ( 이미지 검색 및 로드 ) 를 활용했으�
 
 
 # 3. UI 구조
-![uiImage](https://github.com/sk7556/JsToGPTPage/assets/109896609/47a796f3-8bb8-47d3-808a-12e119d0a7ae)
-
-
+<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/b7ee5662-4bac-4a9e-af81-7acfba752b65" width = "795" height = "275">
 
 # 4. 프로젝트 시연
 **[ 키워드 입력 및 로딩 ( index.html ) ]**
