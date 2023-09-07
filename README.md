@@ -121,11 +121,6 @@ fetch를 이용하여 GPT AI와 API를 활용하였습니다
         specifyImage.js   // Image 로드해주는 API 활용
 ```
 
-
-
-
-<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/1b2a1525-41a1-4080-ac90-7f55ac78d390" width = "300" height = "480">
-
 <p align = "left">작업 파일 트리</p>
 
 
