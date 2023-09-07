@@ -41,7 +41,7 @@ GPT AI 의 기능을 활용해내는 페이지를 만들고자 했습니다
 
 **[WBS]**
 
-<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/be82d93f-0cf4-47e4-bffd-44e97e983128" width = "789" height = "413">
+<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/be82d93f-0cf4-47e4-bffd-44e97e983128" width = "600" height = "320">
 
 
 # 3. 프로젝트 시연
