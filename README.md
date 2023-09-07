@@ -2,13 +2,13 @@
 
 **[ 목차 ]** 
 1. [프로젝트 기획](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#1-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B8%B0%ED%9A%8D)
-2. 프로젝트 진행
-3. [프로젝트 시연](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
-4. [UI 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#3-ui-%EA%B5%AC%EC%A1%B0)
-5. [구현 기능](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#4-%EA%B5%AC%ED%98%84-%EA%B8%B0%EB%8A%A5)
-6. [데이터 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#5-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0)
-7. [개발 이슈](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#6-%EA%B0%9C%EB%B0%9C-%EC%9D%B4%EC%8A%88)
-8. [링크](https://github.com/sk7556/JsToGPTPage#7-%EB%A7%81%ED%81%AC)
+2. [프로젝트 진행](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89)
+3. [프로젝트 시연](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#3-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
+4. [UI 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#4-ui-%EA%B5%AC%EC%A1%B0)
+5. [구현 기능](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#5-%EA%B5%AC%ED%98%84-%EA%B8%B0%EB%8A%A5)
+6. [데이터 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#6-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0)
+7. [개발 이슈](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#7-%EA%B0%9C%EB%B0%9C-%EC%9D%B4%EC%8A%88)
+8. [링크](https://github.com/sk7556/JsToGPTPage#8-%EB%A7%81%ED%81%AC)
 
 # 1. 프로젝트 기획
 
@@ -39,11 +39,13 @@ GPT AI 의 기능을 활용해내는 페이지를 만들고자 했습니다
 
 # 2.프로젝트 진행
 
-WBS
+**[WBS]**
+
 <img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/be82d93f-0cf4-47e4-bffd-44e97e983128" width = "789" height = "413">
 
 
 # 3. 프로젝트 시연
+
 **[ 키워드 입력 및 로딩 ( index.html ) ]**
 
 <img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/03bd4485-3722-445a-a33b-36d4bc5c3c6f" width = "300" height = "680">
@@ -55,6 +57,7 @@ WBS
 
 
 # 4. UI 구조
+
 <img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/b7ee5662-4bac-4a9e-af81-7acfba752b65" width = "795" height = "275">
 
 
