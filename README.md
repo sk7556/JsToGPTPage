@@ -2,12 +2,13 @@
 
 **[ 목차 ]** 
 1. [프로젝트 기획](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#1-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B8%B0%ED%9A%8D)
-2. [프로젝트 시연](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
-3. [UI 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#3-ui-%EA%B5%AC%EC%A1%B0)
-4. [구현 기능](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#4-%EA%B5%AC%ED%98%84-%EA%B8%B0%EB%8A%A5)
-5. [데이터 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#5-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0)
-6. [개발 이슈](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#6-%EA%B0%9C%EB%B0%9C-%EC%9D%B4%EC%8A%88)
-7. [링크](https://github.com/sk7556/JsToGPTPage#7-%EB%A7%81%ED%81%AC)
+2. [프로젝트 진행](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#2%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89)
+3. [프로젝트 시연](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#3-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%97%B0)
+4. [UI 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#4-ui-%EA%B5%AC%EC%A1%B0)
+5. [구현 기능](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#5-%EA%B5%AC%ED%98%84-%EA%B8%B0%EB%8A%A5)
+6. [데이터 구조](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#6-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0)
+7. [개발 이슈](https://github.com/sk7556/JsToGPTPage/blob/main/README.md#7-%EA%B0%9C%EB%B0%9C-%EC%9D%B4%EC%8A%88)
+8. [링크](https://github.com/sk7556/JsToGPTPage#8-%EB%A7%81%ED%81%AC)
 
 # 1. 프로젝트 기획
 
@@ -36,7 +37,15 @@ GPT AI 의 기능을 활용해내는 페이지를 만들고자 했습니다
 
 관련된 이해를 높이는 경험을 하고자 준비했습니다
 
-# 2. 프로젝트 시연
+# 2.프로젝트 진행
+
+**[WBS]**
+
+<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/be82d93f-0cf4-47e4-bffd-44e97e983128" width = "600" height = "320">
+
+
+# 3. 프로젝트 시연
+
 **[ 키워드 입력 및 로딩 ( index.html ) ]**
 
 <img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/03bd4485-3722-445a-a33b-36d4bc5c3c6f" width = "300" height = "680">
@@ -47,11 +56,12 @@ GPT AI 의 기능을 활용해내는 페이지를 만들고자 했습니다
 
 
 
-# 3. UI 구조
+# 4. UI 구조
+
 <img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/b7ee5662-4bac-4a9e-af81-7acfba752b65" width = "795" height = "275">
 
 
-# 4. 구현 기능
+# 5. 구현 기능
 
 **[ HTML / CSS ]**
 
@@ -73,22 +83,48 @@ fetch를 이용하여 GPT AI와 API를 활용하였습니다
 
 **[ API 리소스 활용 ]**
 
-Google Map API , unsplash API ( 이미지 검색 및 로드 ) 를 활용했으며,
+* Google Map - 좌표, 지역명에 따른 맵 기능 구현
+* APIunsplash API - 이미지 검색 및 로드 
 
 학습이나 개인개발용으로 활용 가능한 API를 사용했습니다 
 
-# 5. 데이터 구조
+# 6. 데이터 구조
 ![dataflow](https://github.com/sk7556/JsToGPTPage/assets/109896609/c0141dc3-0a89-4835-a77d-8b121e52d15a)
 
 <p align = "center">입 / 출력과 페이지별 데이터 흐름</p>
 
-
-<img src = "https://github.com/sk7556/JsToGPTPage/assets/109896609/1b2a1525-41a1-4080-ac90-7f55ac78d390" width = "300" height = "480">
+```bash
+│  index.html
+│  main.html
+│  README.md
+│
+├─css
+│      index.css
+│      main.css
+│      style.css
+│
+├─image
+│      airplane.png
+│      iphone.png
+│      leftArrow.png
+│      map.png
+│      next.png
+│
+└─js
+        checkInput.js     // Input 데이터의 미입력시 얼럿 출력
+        googleMapAPI.js   // 구글맵 API 활용
+        index.js          // index 페이지에서 활용되는 GPT fetch와 변수 활용
+        indexLoad.js      // index 페이지 로딩 화면
+        main.js           // main 페이지에서 활용되는 변수 활용
+        moveDivFadeout.js // Div 이동시, fadeout 해주는 함수
+        scrollToTarget.js // 화면 스크롤 이동 시 사용하였던 함수
+        specifyImage.js   // Image 로드해주는 API 활용
+```
 
 <p align = "left">작업 파일 트리</p>
 
 
-# 6. 개발 이슈
+# 7. 개발 이슈
 **[ 프롬프트 엔지니어링 이슈 ]**
 
 입력한 값에 따라 원하는 정확한 데이터를 출력하지 못하는 경우가 잦아
@@ -122,7 +158,7 @@ fetch 및 GPT의 프롬프트 엔지니어링에 난항을 겪어
 프로젝트 진행 내용을 기록했다면 더 도움이 되었을 것 같습니다
 
 
-# 7. 링크
+# 8. 링크
 - 개발툴    : VSCODE
 - 개발 언어 : HTML / CSS / JavaScript  
 - Git repo  :  https://github.com/sk7556/JsToGPTPage/
