@@ -19,15 +19,14 @@ body {
 
 .iphoneWindow {
   display: flex;
-  position: fixed;
+  position: absolute;
   justify-content: center;
-  top: 75px;
+  top: -10px;
 }
 
 .iphone {
   width: 475px;
   top: 0;
-  right: 0;
 }
 
 
@@ -107,10 +106,10 @@ body {
   position: fixed;
   z-index: 100;
   font-size: 20px;
-  height: 1009px;
-  margin-top: 34px;
+  height: 1028px;
+  margin-top: 25px;
   padding: 8px;
-  margin-left: 0;
+  margin-left: -10px;
 }
 
 

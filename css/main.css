@@ -20,11 +20,34 @@ body {
     background-color: white;
 }
 
+#background_1{
+    background-color: white;
+    /* border : red solid 3px; */
+    display : flex;
+    position: fixed;
+    width : 475px;
+    height : 139px;
+    z-index: 200;
+    top : -30px;
+    border-bottom: black solid 10px;
+}
+
+#background_2{
+    background-color: white;
+    display : flex;
+    position: fixed;
+    width : 475px;
+    height : 2000px;
+    top : 1067px;
+    z-index: 200;
+    border-bottom: black solid 10px;
+}
+
 .iphoneWindow {
     display : flex;
     position: fixed;
     justify-content: center;
-    top : 75px;
+    top : -15px;
 }
 
 .iphone {
@@ -42,7 +65,7 @@ header{
     font-size : 20px;
     border-radius : 45px;   
     width : 450px;  
-    margin-top : 50px;
+    margin-top : 55px;
     margin-left : 12px;
     background-color : white;
     padding : 8px;
@@ -221,7 +244,7 @@ header{
     position : relative;
     border : 3px solid black;
     border-radius: 30px;
-    height : 100%;
+    height : 98%;
     margin : 10px;
 }
 
@@ -241,7 +264,6 @@ header{
 .cardComment{
     position : absolute;
     font-size : 25px;
-    z-index: 1500;
     left : 30px;
     top : 430px;
     width : 240px;
@@ -252,7 +274,6 @@ header{
     position : absolute;
     width : 100px;
     height : 70px;    
-    z-index: 1500;
     right : 30px;
     top : 420px;
 }
