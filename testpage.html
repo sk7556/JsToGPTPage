@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <input type="text">
+            <button type="submit">질문하기!</button>
+        </form>
+        <div class="answer"></div>
+    </div>
+    <script>
+        const $input = document.querySelector('input')
+        const $button = document.querySelector('button')
+        const $answer = document.querySelector('.answer')
+
+        const data = []
+        data.push({
+            "role": "system",
+            "content": "{cityPlace : 관광지(영문), location : (latitude : (좌표), longitude : (좌표)), description : 설명(한글)}의 형식을 JSON 형식으로 반드시 지켜서 5개 출력해줘"
+            // "content": "{번호, 관광지(영문), 관광지의 구글맵좌표, 설명(한글)}의 형식을 반드시 지켜서 출력해줘"
+        })
+
+        const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`
+        
+
+        $button.addEventListener('click', e => {
+            e.preventDefault()
+            const contents = $input.value
+            data.push({
+                "role": "user",
+                "content": contents
+            })
+            $input.value = ''
+
+            chatGPTAPI()
+        })
+        var test = ""
+        function chatGPTAPI() {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+                redirect: 'follow'
+            })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res.choices[0].message.content)
+                test = res.choices[0].message.content;
+                // 답변 온 것을 assistant로 저장
+                $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`
+            })
+        }
+    </script>
+</body>
+</html>
